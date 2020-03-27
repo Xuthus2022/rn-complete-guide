@@ -12,7 +12,7 @@ export default function App() {
   const addGoalHandler = () => {
     setCourseGoals([...courseGoals, enteredGoal]);
   };
-
+//hey there Sam
   return (
     <View style={styles.screen}>
       <View style={styles.inputContainer}>
