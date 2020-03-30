@@ -12,7 +12,7 @@ export default function App() {
   const addGoalHandler = () => {
     setCourseGoals([...courseGoals, enteredGoal]);
   };
-//hey there Sam
+
   return (
     <View style={styles.screen}>
       <View style={styles.inputContainer}>
@@ -28,14 +28,13 @@ export default function App() {
         />
 
       </View>
-      <ScrollView>
-        {courseGoals.map(goal => (
-          <View key={goal} style={styles.listItem}>
-            <Text>{goal}</Text>
-          </View>
-        ))}
-      </ScrollView>
-    </View>
+      <FlatList data={courseGoals} renderItem={itemData => (
+          <View style={styles.listItem}>
+            <Text>{itemData.item}</Text>
+          </View>      
+      )}
+      />
+      </View>
   );
 }
 
